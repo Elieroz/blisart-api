@@ -1,4 +1,4 @@
-package blisart.love.live.BlisartApi;
+package blisartLoveLive.blisartApi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

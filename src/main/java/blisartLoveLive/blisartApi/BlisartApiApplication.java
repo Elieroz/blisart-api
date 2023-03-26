@@ -1,4 +1,4 @@
-package blisart.love.live.BlisartApi;
+package blisartLoveLive.blisartApi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

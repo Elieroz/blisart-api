@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+
+  db:
+    # Build the image using the Dockerfile in the same directory.
+    build: .
+    # Needed by mysql, TODO
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+
+    # Not needed here anymore, these are set by the Dockerfile.
+    # environment:
+    #     MYSQL_ROOT_PASSWORD: hub_talent
+    #     MYSQL_DATABASE: hub_talent
+    #     MYSQL_USER: hub_talent
+    #     MYSQL_PASSWORD: hub_talent
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'

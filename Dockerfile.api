@@ -1,0 +1,7 @@
+FROM eclipse-temurin:17-jre-focal
+
+COPY target/BlisartApi-0.0.1-SNAPSHOT.jar /api.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "api.jar"]

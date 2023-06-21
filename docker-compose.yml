@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.8'
 
 services:
 
@@ -19,3 +19,21 @@ services:
       - '3306:3306'
     expose:
       - '3306'
+#    healthcheck:
+#      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+#    depends_on:
+#      db:
+#        condition: service_healthy
+#        restart: true

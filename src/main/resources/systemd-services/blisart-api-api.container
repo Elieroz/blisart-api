@@ -1,0 +1,14 @@
+[Unit]
+Requires=blisart-api-db.service
+After=blisart-api-db.service
+
+[Container]
+ContainerName=blisart-api-api
+Image=localhost/blisart-api_api:latest
+AutoUpdate=registry
+HealthCmd=CMD-SHELL curl -sSf http://localhost:8080/health || exit 1
+HealthInterval=10s
+HealthRetries=5
+HealthTimeout=5s
+PublishPort=8080:8080
+Network=blisart-api-network.network

@@ -1,0 +1,12 @@
+[Container]
+ContainerName=blisart-api-db
+Image=docker.io/library/mysql:8.0.40-debian
+AutoUpdate=registry
+Environment=MYSQL_ROOT_PASSWORD=arthas MYSQL_DATABASE=blizzard MYSQL_USER=arthas MYSQL_PASSWORD=arthas
+HealthCmd=CMD-SHELL mysqladmin ping -h localhost
+HealthInterval=10s
+HealthRetries=5
+HealthTimeout=5s
+PublishPort=3306:3306
+Network=blisart-api-network.network
+Volume=%h/Projects/blisart-lovelive/blisart-api/src/main/resources/db/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:Z

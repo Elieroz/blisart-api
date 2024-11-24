@@ -1,0 +1,6 @@
+[Unit]
+Description=blisart-api network
+
+[Network]
+Subnet=192.168.40.0/24
+Gateway=192.168.40.1
